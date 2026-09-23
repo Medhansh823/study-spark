@@ -1,41 +1,49 @@
 # Study Spark
 
-A student-first CBSE learning workspace, rebuilt from scratch around the idea that students need more than an answer box.
+Study Spark is a student-first learning workspace for CBSE students. It is designed around the complete study loop instead of a single AI chat box:
 
-## Current product
+**Learn → Understand → Practice → Revise → Plan → Focus → Track**
+
+## Product
 
 - Class 6–10 selector
 - Subject and chapter explorer
-- AI Tutor with Hugging Face inference
-- AI practice quiz generation
-- Notes
-- Study planner
+- Chapter learning launch flow
+- Spark AI Tutor
+- AI practice generation
+- Exam-style practice modes
+- Weak-topic and mistake-review flows
+- Notes and flashcards
+- Personal study planner
 - Focus timer
-- Progress view
-- Responsive student-first UI
-- Cloudflare Pages Functions AI proxy
+- Subject progress dashboard
+- Local-first browser storage
+- Responsive desktop/mobile UI
+- Cloudflare Pages Function AI proxy
 
-## AI setup
+## Hugging Face AI
 
-Add a Hugging Face token as the Cloudflare secret `HF_TOKEN`. Never put the token in frontend code. The default model is `Qwen/Qwen3-4B-Instruct-2507:fastest` through Hugging Face Inference Providers; change `HF_MODEL` if you choose another supported provider/model.
+The `/api/ai` function calls Hugging Face Inference Providers. The default model is `Qwen/Qwen3-4B-Instruct-2507:fastest`.
 
-## Local development
+Add `HF_TOKEN` as a Cloudflare secret. Never place the token in frontend JavaScript. `HF_MODEL` can be changed to another supported model/provider.
+
+## Development
 
 ```bash
 npm install
 npm run dev
-```
-
-Build:
-
-```bash
 npm run build
 ```
 
-## Product direction
+## Design principles
 
-Study Spark is designed to become a student operating system:
+1. Students should be able to get started in seconds.
+2. The AI should teach, not merely dump answers.
+3. Every answer should lead naturally to practice or understanding.
+4. Planning should reduce overwhelm, not create more of it.
+5. Progress should help students notice improvement rather than pressure them.
+6. The app should remain useful even before account sync is added.
 
-**Learn → Understand → Practice → Revise → Plan → Focus → Track**
+## Next expansion
 
-Planned next layers include curriculum-grounded retrieval, question-image understanding, chapter knowledge packs, spaced repetition, mistake analytics, exam readiness, and better persistence/authentication.
+The architecture is ready for curriculum-grounded retrieval, question-image understanding, chapter knowledge packs, spaced repetition, richer mistake analytics, exam readiness, and optional account sync.
